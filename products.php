@@ -1,13 +1,17 @@
 <?php
 session_start();
 
-$products = ["Apple" => 1, "Banana" => 2, "Oranges" => 3];
+$products = [
+    "Apple" => 1,
+    "Banana" => 2,
+    "Orange" => 3
+];
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-if (isset($SESSION['cart'])) {
+if (isset($_GET['item'])) {
     $item = $_GET['item'];
 
     if (isset($products[$item])) {
@@ -17,6 +21,10 @@ if (isset($SESSION['cart'])) {
         ];
     }
 }
+
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 ?>
 
 <!DOCTYPE html>

@@ -3,6 +3,10 @@ session_start();
 
 $cart = $_SESSION['cart'] ?? [];
 $total = 0;
+
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 ?>
 
 <!DOCTYPE html>
